@@ -17,7 +17,6 @@ agg_data <- updated_dataset1 %>%
     other_race_jail_pop_avg = mean(other_race_jail_pop)
   )
 
-# Create a line plot showing trends over time for each ethnicity
 ggplot(agg_data, aes(x = year)) +
   geom_line(aes(y = aapi_jail_pop_avg, color = "AAPI")) +
   geom_line(aes(y = black_jail_pop_avg, color = "Black")) +
@@ -25,10 +24,10 @@ ggplot(agg_data, aes(x = year)) +
   geom_line(aes(y = native_jail_pop_avg, color = "Native")) +
   geom_line(aes(y = white_jail_pop_avg, color = "White")) +
   geom_line(aes(y = other_race_jail_pop_avg, color = "Other")) +
-  labs(title = "Average Jail Population Trends by Ethnicity Over Time",
+  labs(title = "Average Jail Population Trends by Racial Group Over Time",
        x = "Year",
        y = "Average Jail Population",
-       color = "Ethnicity") +
+       color = "Racial Group") +
   scale_color_manual(values = c("AAPI" = "blue", "Black" = "red", 
                                 "Latinx" = "green", "Native" = "purple", 
                                 "White" = "orange", "Other" = "gray")) +
